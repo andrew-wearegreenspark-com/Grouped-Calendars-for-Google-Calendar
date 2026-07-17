@@ -1,6 +1,6 @@
 # Grouped Calendars for Google Calendar
 
-Version 1.0.0 adds coloured calendar groups, reliable visibility controls, and reversible Solo views directly to the Google Calendar sidebar.
+Version 1.0.1 adds coloured calendar groups, reliable visibility controls, and reversible Solo views directly to the Google Calendar sidebar.
 
 The extension has no external server, analytics, advertising, or tracking. Calendar names and group settings are stored by Chrome. Event details are not read or stored.
 

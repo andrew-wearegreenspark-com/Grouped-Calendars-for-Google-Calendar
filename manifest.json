@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Grouped Calendars for Google Calendar",
+  "version": "1.0.1",
+  "description": "Organise Google calendars into coloured groups, control visibility, and use reversible Solo and Quick Solo views.",
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://calendar.google.com/*"],
+  "background": {
+    "service_worker": "src/background/serviceWorker.js"
+  },
+  "action": {
+    "default_title": "Grouped Calendars",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png"
+    },
+    "default_popup": "src/popup/index.html"
+  },
+  "options_ui": {
+    "page": "src/options/index.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://calendar.google.com/*"],
+      "css": ["src/styles/calendar.css"],
+      "js": [
+        "src/shared/configurationModel.js",
+        "src/content/constants.js",
+        "src/content/configurationStore.js",
+        "src/content/grouping.js",
+        "src/content/calendarDiscovery.js",
+        "src/content/nativeCalendarBridge.js",
+        "src/content/soloController.js",
+        "src/content/groupedSectionRenderer.js",
+        "src/content/reconciliation.js",
+        "src/content/mutationObserver.js",
+        "src/content/index.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

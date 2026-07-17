@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grouped Calendars settings</title>
+  <link rel="icon" href="../../assets/icons/icon-32.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="brand-heading">
+      <img src="../../assets/icons/icon-48.png" width="48" height="48" alt="">
+      <div>
+      <p class="eyebrow">Google Calendar extension</p>
+      <h1>Grouped Calendars</h1>
+      <p>Create groups and decide where each discovered calendar belongs.</p>
+      </div>
+    </div>
+    <button id="open-calendar" class="secondary" type="button">Open Google Calendar</button>
+  </header>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <main>
+    <section class="panel" aria-labelledby="groups-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="groups-heading">Groups</h2>
+          <p>Rename, reorder, or delete extension groups. Google calendars are never deleted.</p>
+        </div>
+      </div>
+      <form id="create-group-form" class="create-form">
+        <label for="new-group-name">New group name</label>
+        <div class="input-row">
+          <input id="new-group-name" maxlength="80" autocomplete="off" required>
+          <button type="submit">Create group</button>
+        </div>
+      </form>
+      <div id="groups-list" class="groups-list"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="calendars-heading">
+      <div class="section-heading calendars-heading">
+        <div>
+          <h2 id="calendars-heading">Calendar assignments</h2>
+          <p>Each calendar can belong to one custom group. Choose Ungrouped to remove an assignment.</p>
+        </div>
+        <label class="search-label" for="calendar-search">
+          <span>Search calendars</span>
+          <input id="calendar-search" type="search" placeholder="Search by name">
+        </label>
+      </div>
+      <div id="calendars-list" class="calendars-list"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Behaviour</h2>
+      <div class="settings-list">
+        <label><input id="show-ungrouped" type="checkbox"> Show Ungrouped in the sidebar</label>
+        <label><input id="include-ungrouped-all" type="checkbox"> Include Ungrouped when using All</label>
+        <label><input id="restore-after-solo" type="checkbox"> Restore the previous visibility state after Solo</label>
+        <label class="disabled"><input id="include-special" type="checkbox" disabled> Include supported special calendars <span>Planned for hardening</span></label>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="data-heading">
+      <h2 id="data-heading">Configuration data</h2>
+      <p>Export a backup, import a previous configuration, or reset the extension.</p>
+      <div class="data-actions">
+        <button id="export-configuration" class="secondary" type="button">Export configuration</button>
+        <button id="choose-import" class="secondary" type="button">Import configuration</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+        <button id="reset-configuration" class="danger" type="button">Reset configuration</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../shared/configurationModel.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Release archives and local working folders are deliberately not committed.
+*.zip
+work/
+
+# Keep only the final Chrome icon sizes in the public repository.
+assets/icons/icon-master.png
+assets/icons/icon-source-chroma.png

@@ -1,0 +1,399 @@
+/* All selectors are rooted at the extension-owned element so native Calendar styling is untouched. */
+#gcal-grouped-calendars-root {
+  color: inherit;
+  font: inherit;
+  margin: 8px 0 12px;
+  min-width: 0;
+}
+
+#gcal-grouped-calendars-root,
+#gcal-grouped-calendars-root * {
+  box-sizing: border-box;
+}
+
+.gcal-groups-header {
+  min-height: 32px;
+  padding: 0 12px;
+  position: relative;
+}
+
+.gcal-groups-collapse,
+.gcal-groups-group-collapse,
+.gcal-groups-group-visibility,
+.gcal-groups-group-icon-button,
+.gcal-groups-solo,
+.gcal-groups-quick,
+.gcal-groups-all,
+.gcal-groups-manage,
+.gcal-groups-calendar {
+  color: inherit;
+  font: inherit;
+}
+
+.gcal-groups-collapse {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 32px;
+  cursor: pointer;
+  display: flex;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 32px;
+  padding: 0 8px 0 16px;
+  text-align: left;
+  width: calc(100% - 34px);
+}
+
+.gcal-groups-collapse:hover,
+.gcal-groups-group-collapse:hover,
+.gcal-groups-group-visibility:hover,
+.gcal-groups-group-icon-button:hover,
+.gcal-groups-solo:hover,
+.gcal-groups-quick:hover,
+.gcal-groups-all:hover,
+.gcal-groups-manage:hover,
+.gcal-groups-calendar:hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.gcal-groups-collapse:focus-visible,
+.gcal-groups-group-collapse:focus-visible,
+.gcal-groups-group-visibility:focus-visible,
+.gcal-groups-group-icon-button:focus-visible,
+.gcal-groups-solo:focus-visible,
+.gcal-groups-quick:focus-visible,
+.gcal-groups-all:focus-visible,
+.gcal-groups-manage:focus-visible,
+.gcal-groups-calendar:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+}
+
+.gcal-groups-title {
+  flex: 1 1 auto;
+}
+
+.gcal-groups-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  min-height: 32px;
+  padding: 2px 28px 6px;
+}
+
+.gcal-groups-quick,
+.gcal-groups-all {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  height: 24px;
+  padding: 0 8px;
+}
+
+.gcal-groups-quick {
+  min-width: 72px;
+}
+
+.gcal-groups-quick[data-quick-status="selecting"] {
+  box-shadow: inset 0 0 0 1px #1a73e8;
+  color: #1a73e8;
+}
+
+.gcal-groups-quick[data-quick-status="applied"] {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.gcal-groups-manage {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  width: 28px;
+  z-index: 1;
+}
+
+.gcal-groups-manage-icon {
+  font-family: "Google Material Icons";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+
+.gcal-groups-command-status {
+  display: block;
+  font-size: 10px;
+  line-height: 16px;
+  padding: 0 16px 2px;
+}
+
+.gcal-groups-command-status--busy {
+  color: #1a73e8;
+}
+
+.gcal-groups-command-status--error {
+  color: #c5221f;
+}
+
+.gcal-groups-root button:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.gcal-groups-collapse-icon {
+  flex: 0 0 22px;
+  font-family: "Google Material Icons";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  height: 22px;
+  line-height: 22px;
+  width: 22px;
+}
+
+.gcal-groups-list {
+  padding: 2px 0 0;
+}
+
+.gcal-groups-group {
+  border: 1px solid color-mix(in srgb, var(--group-colour, #5f6368) 58%, transparent);
+  border-left: 4px solid var(--group-colour, #5f6368);
+  border-radius: 8px;
+  margin: 6px 8px;
+  overflow: hidden;
+}
+
+.gcal-groups-group[data-solo-active="true"] .gcal-groups-group-header {
+  background: color-mix(in srgb, #1a73e8 14%, transparent);
+  box-shadow: inset 3px 0 #1a73e8;
+}
+
+.gcal-groups-group-header {
+  align-items: center;
+  display: flex;
+  min-height: 32px;
+  padding: 0 12px 0 16px;
+}
+
+.gcal-groups-group-visibility {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.gcal-groups-group-visibility:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.gcal-groups-group-checkbox {
+  /* The parent group supplies this colour from its persistent configuration. */
+  --group-control-colour: var(--group-colour, #5f6368);
+  align-items: center;
+  border: 2px solid var(--group-control-colour);
+  border-radius: 2px;
+  color: white;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  height: 16px;
+  justify-content: center;
+  line-height: 1;
+  width: 16px;
+}
+
+.gcal-groups-group-visibility[aria-checked="true"] .gcal-groups-group-checkbox,
+.gcal-groups-group-visibility[aria-checked="mixed"] .gcal-groups-group-checkbox {
+  background: var(--group-control-colour);
+}
+
+.gcal-groups-group-collapse {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex: 1 1 auto;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  height: 32px;
+  min-width: 0;
+  padding: 0 4px 0 6px;
+  text-align: left;
+}
+
+.gcal-groups-solo {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  height: 24px;
+  padding: 0 7px;
+}
+
+.gcal-groups-solo[aria-pressed="true"] {
+  background: #1a73e8;
+  border-color: #1a73e8;
+  color: white;
+}
+
+.gcal-groups-solo:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.gcal-groups-group-icon-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 28px;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.gcal-groups-group-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gcal-groups-group-count {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.62;
+  padding: 0 4px;
+}
+
+.gcal-groups-group-icon {
+  flex: 0 0 20px;
+  font-family: "Google Material Icons";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+
+.gcal-groups-group-list {
+  padding: 0 8px 2px 20px;
+}
+
+.gcal-groups-calendar {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  min-height: 32px;
+  padding: 3px 8px 3px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.gcal-groups-checkbox {
+  align-items: center;
+  background: var(--calendar-colour, #1a73e8);
+  border: 2px solid var(--calendar-colour, #1a73e8);
+  border-radius: 2px;
+  color: white;
+  display: inline-flex;
+  flex: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  height: 16px;
+  justify-content: center;
+  line-height: 1;
+}
+
+.gcal-groups-calendar[aria-checked="false"] .gcal-groups-checkbox {
+  background: transparent;
+}
+
+/* Quick Solo turns rows into a temporary multi-select list. */
+.gcal-groups-calendar[data-quick-mode="true"][data-quick-selected="false"] .gcal-groups-checkbox {
+  background: transparent;
+}
+
+.gcal-groups-calendar[data-quick-selected="true"] {
+  background: color-mix(in srgb, #1a73e8 14%, transparent);
+  box-shadow: inset 3px 0 #1a73e8;
+}
+
+.gcal-groups-calendar-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gcal-groups-empty {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.7;
+  padding: 8px 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gcal-groups-collapse:focus-visible,
+  .gcal-groups-group-collapse:focus-visible,
+  .gcal-groups-group-visibility:focus-visible,
+  .gcal-groups-group-icon-button:focus-visible,
+  .gcal-groups-solo:focus-visible,
+  .gcal-groups-quick:focus-visible,
+  .gcal-groups-all:focus-visible,
+  .gcal-groups-manage:focus-visible,
+  .gcal-groups-calendar:focus-visible {
+    outline-color: #8ab4f8;
+  }
+
+  .gcal-groups-command-status--busy {
+    color: #8ab4f8;
+  }
+
+  .gcal-groups-command-status--error {
+    color: #f28b82;
+  }
+
+}

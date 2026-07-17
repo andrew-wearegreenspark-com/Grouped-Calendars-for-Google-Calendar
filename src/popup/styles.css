@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; font-family: Roboto, Arial, sans-serif; }
+body { margin: 0; min-width: 250px; padding: 18px; }
+h1 { font-family: "Google Sans", Roboto, Arial, sans-serif; font-size: 18px; margin: 0 0 6px; }
+.brand { align-items: center; display: flex; gap: 10px; margin-bottom: 8px; }
+.brand img { flex: 0 0 40px; }
+.brand h1 { margin: 0; }
+p { color: #5f6368; font-size: 13px; line-height: 1.45; margin: 0 0 16px; }
+button { background: #1a73e8; border: 1px solid #1a73e8; border-radius: 8px; color: white; cursor: pointer; display: block; font: inherit; min-height: 38px; margin-top: 8px; width: 100%; }
+button.secondary { background: transparent; color: #1a73e8; }
+button:focus-visible { outline: 2px solid #1a73e8; outline-offset: 2px; }
+@media (prefers-color-scheme: dark) { p { color: #bdc1c6; } button.secondary { border-color: #8ab4f8; color: #8ab4f8; } }
