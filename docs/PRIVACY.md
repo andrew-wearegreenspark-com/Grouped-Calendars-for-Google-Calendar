@@ -35,4 +35,4 @@ Material changes to this policy will be included with a new extension release an
 
 ## Contact
 
-andrew@wearegreenspark.com
+For support or privacy questions, contact `andrew@wearegreenspark.com`.
